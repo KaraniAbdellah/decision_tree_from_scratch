@@ -1,9 +1,15 @@
 day,outlook,temp,play
 1,sunny,hot,0
 2,sunny,hot,0
-3,overcat,hot,1
+3,overcast,hot,1
 4,rain,mild,1
 5,rain,cool,0
 6,overcast,cool,1
-7,sunny,cool,0
+7,sunny,mild,0
+7,sunny,cool,1
 8,rain,mild,1
+9,rain,cool,1
+10,sunny,mild,1
+11,overcast,mild,1
+12,overcast,cool,1
+13,rain,mild,0
