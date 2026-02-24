@@ -98,7 +98,7 @@ p⁻ = proportion of negative samples (play = 0) in S
             └── wind = 'strong'  H=0  S=[0Y, 2N]  => No
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ``` bash
 decision-tree-from-scratch/
