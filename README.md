@@ -16,7 +16,7 @@ so building the tree is big part.
 
 ---
 
-### --> Get DataSet
+### Get DataSet
 
 for me I use simple dataset contain features (outlook, temp, humidity, wind, season, play) that mean:
 
@@ -39,18 +39,25 @@ to do this we should Calculate Information Gain for each feature. we take featur
 
 ``` bash
 Gain(S, A) = Entropy(S) - Σ ( |S_v| / |S| ) * Entropy(S_v)
+```
 
---> WHERE:
+Where:
+``` bash
 S = the whole dataset (all rows).
 A = the feature we are checking (like temp, outlook, etc.).
 v = each unique value of feature A (like sunny, rain, hot, high).
 |S_v| = number of rows in the dataset where A = v (we need to extract subSet from dataSet).
 |S| = total number of rows in the dataset.
 Entropy(S_v) = the entropy of the subset of rows where A = v.
+```
 
-
+``` bash
 Entropy(S) = -p⁺ log₂(p⁺) - p⁻ log₂(p⁻)
---> WHERE:
+```
+
+WHERE:
+
+``` bash
 p⁺ = proportion of positive samples (play = 1) in S
 p⁻ = proportion of negative samples (play = 0) in S
 ```
@@ -59,16 +66,16 @@ p⁻ = proportion of negative samples (play = 0) in S
 ---
 
 ### Build Tree
---> after finding the root we need to find the children for each element and may be add more nodes, for do this:
+✔ after finding the root we need to find the children for each element and may be add more nodes, for do this:
 - I Implement `create_node()` to store:
   - Feature name, value, entropy, counts `[yes, no]`, and children.
 - I Implement `add_child()` to connect nodes.
 
---> For each feature I create subset of Dataset and Continue splitting recursively until:
+✔ For each feature I create subset of Dataset and Continue splitting recursively until:
 - Entropy = 0 → assign leaf label (`Yes`/`No`).
 - No features left → assign **majority label**.
 
---> I implement `buildTree()`:
+✔ I implement `buildTree()`:
 - Calculate gain on subsets.
 - Create nodes and assign children.
 - Recursively build all branches until leaf nodes.
