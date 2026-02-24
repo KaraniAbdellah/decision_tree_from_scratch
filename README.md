@@ -35,8 +35,26 @@ for me I use simple dataset contain features (outlook, temp, humidity, wind, sea
 in this part we should know what root features (which features that will be in root of tree).
 to do this we should Calculate Information Gain for each feature. we take feature that has biggest gain.
 
-here is mathematical formula:
+📐 here is mathematical formula:
+
+``` bash
 Gain(S, A) = Entropy(S) - Σ ( |S_v| / |S| ) * Entropy(S_v)
+
+--> WHERE:
+S = the whole dataset (all rows).
+A = the feature we are checking (like temp, outlook, etc.).
+v = each unique value of feature A (like sunny, rain, hot, high).
+|S_v| = number of rows in the dataset where A = v (we need to extract subSet from dataSet).
+|S| = total number of rows in the dataset.
+Entropy(S_v) = the entropy of the subset of rows where A = v.
+
+
+Entropy(S) = -p⁺ log₂(p⁺) - p⁻ log₂(p⁻)
+--> WHERE:
+p⁺ = proportion of positive samples (play = 1) in S
+p⁻ = proportion of negative samples (play = 0) in S
+```
+
 
 ---
 
