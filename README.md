@@ -66,16 +66,16 @@ p⁻ = proportion of negative samples (play = 0) in S
 ---
 
 ### Build Tree
---> after finding the root we need to find the children for each element and may be add more nodes, for do this:
+✔ after finding the root we need to find the children for each element and may be add more nodes, for do this:
 - I Implement `create_node()` to store:
   - Feature name, value, entropy, counts `[yes, no]`, and children.
 - I Implement `add_child()` to connect nodes.
 
---> For each feature I create subset of Dataset and Continue splitting recursively until:
+✔ For each feature I create subset of Dataset and Continue splitting recursively until:
 - Entropy = 0 → assign leaf label (`Yes`/`No`).
 - No features left → assign **majority label**.
 
---> I implement `buildTree()`:
+✔ I implement `buildTree()`:
 - Calculate gain on subsets.
 - Create nodes and assign children.
 - Recursively build all branches until leaf nodes.
