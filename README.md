@@ -35,7 +35,7 @@ for me I use simple dataset contain features (outlook, temp, humidity, wind, sea
 in this part we should know what root features (which features that will be in root of tree).
 to do this we should Calculate Information Gain for each feature. we take feature that has biggest gain.
 
-here is mathematical formula:
+Here is mathematical formula:
 
 ``` bash
 Gain(S, A) = Entropy(S) - Σ ( |S_v| / |S| ) * Entropy(S_v)
@@ -51,11 +51,13 @@ v = each unique value of feature A (like sunny, rain, hot, high).
 Entropy(S_v) = the entropy of the subset of rows where A = v.
 ```
 
+and: 
+
 ``` bash
 Entropy(S) = -p⁺ log₂(p⁺) - p⁻ log₂(p⁻)
 ```
 
-WHERE:
+Where:
 
 ``` bash
 p⁺ = proportion of positive samples (play = 1) in S
@@ -75,7 +77,7 @@ p⁻ = proportion of negative samples (play = 0) in S
 - Entropy = 0 → assign leaf label (`Yes`/`No`).
 - No features left → assign **majority label**.
 
-✔ I implement `buildTree()`:
+✔ I implement `buildTree()` that:
 - Calculate gain on subsets.
 - Create nodes and assign children.
 - Recursively build all branches until leaf nodes.
@@ -83,7 +85,7 @@ p⁻ = proportion of negative samples (play = 0) in S
 ---
 
 ### Display Tree
-- Implement `display_tree()` for display tree With Feature names, values, entropy, counts, and labels.
+- I Implement also `display_tree()` for display tree With Feature names, values, entropy, counts, and labels.
 
 ```bash
 ┌── [outlook] = ROOT  H=0.94  S=[9Y, 5N]
