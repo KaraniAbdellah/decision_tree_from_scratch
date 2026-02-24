@@ -39,18 +39,25 @@ to do this we should Calculate Information Gain for each feature. we take featur
 
 ``` bash
 Gain(S, A) = Entropy(S) - Σ ( |S_v| / |S| ) * Entropy(S_v)
+```
 
---> WHERE:
+Where:
+``` bash
 S = the whole dataset (all rows).
 A = the feature we are checking (like temp, outlook, etc.).
 v = each unique value of feature A (like sunny, rain, hot, high).
 |S_v| = number of rows in the dataset where A = v (we need to extract subSet from dataSet).
 |S| = total number of rows in the dataset.
 Entropy(S_v) = the entropy of the subset of rows where A = v.
+```
 
-
+``` bash
 Entropy(S) = -p⁺ log₂(p⁺) - p⁻ log₂(p⁻)
---> WHERE:
+```
+
+WHERE:
+
+``` bash
 p⁺ = proportion of positive samples (play = 1) in S
 p⁻ = proportion of negative samples (play = 0) in S
 ```
